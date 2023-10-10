@@ -7,6 +7,7 @@ decode_base64_url() {
   if [ $len -eq 2 ]; then result="$1"'=='
   elif [ $len -eq 3 ]; then result="$1"'='
   fi
+  echo "trigger change"
   echo "$result" | tr '_-' '/+' | base64 -d
 }
 
