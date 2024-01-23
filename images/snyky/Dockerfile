@@ -28,6 +28,8 @@ RUN useradd -u 999 -G sudo -ms /bin/bash snyky \
   && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
   && echo 'export TERM=vt100' > /root/.bashrc
 
+RUN echo "trigger PR check!"
+
 COPY --from=ericsmalling/gotty:latest /usr/bin/gotty /usr/local/bin/gotty
 COPY "./gotty_config" "/opt/gotty.conf"
 
